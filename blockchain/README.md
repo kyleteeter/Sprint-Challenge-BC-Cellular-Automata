@@ -1,3 +1,5 @@
+# Initial commit
+ 
 # Blockchain Sprint Challenge
 
 Welcome to the ground floor!  Satoshi Brian is giving you the chance to be the first people to mine Lambda Coins.  However, you'll have to compete with your fellow students to cash in.  
