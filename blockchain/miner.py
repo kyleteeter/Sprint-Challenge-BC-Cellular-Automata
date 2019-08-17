@@ -52,8 +52,13 @@ def valid_proof(last_hash, proof):
     proof_str = str(proof)
     end_hash = last_hash_str[int(length_hash): int(length_hash) +6]
     print(end_hash)
-    
 
+    first_proof = proof_str[0:6]
+
+    if end_hash == first_proof:
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
     # What node are we interacting with?
