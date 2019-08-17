@@ -9,6 +9,7 @@ def get_new_value(old_gen, old_automata):
         if row < len(automata):
             if current_row[i] == 1:
                 #TODO LOGIC
+                automata[row] = 1
             else:
                 #TODO LOGIC
     # TBC - add code to generate the next row of cells,
