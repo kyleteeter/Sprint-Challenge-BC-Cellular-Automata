@@ -45,7 +45,11 @@ def valid_proof(last_hash, proof):
 
     # TODO: Your code here!
     print(last_hash)
-
+    print(proof)
+    last_hash_str = str(last_hash)
+    print(len(last_hash_str[0:3]))
+    length_hash = (len(str(last_hash))) - 6
+    
 
 if __name__ == '__main__':
     # What node are we interacting with?
