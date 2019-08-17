@@ -51,7 +51,7 @@ def valid_proof(last_hash, proof):
     length_hash = (len(str(last_hash))) - 6
     proof_str = str(proof)
     end_hash = last_hash_str[int(length_hash): int(length_hash) +6]
-    print(end_hash)
+    print(str(end_hash))
 
     first_proof = proof_str[0:6]
 

@@ -6,4 +6,8 @@ Blocks consist of a reference to the previous block in the chain, whatever the t
 
 2. How can blockchain users mine coins?
 
+Users can mine coins bases on the prinicple mentioned in my first answer. Since the hash is 'randomly' generated. Clients or users can work to try to guess the hash before others. If they do guess the hash they can add to the blockchain and therefore be rewarded with 'coins'. The more difficult the proof the more valuable coins become. 
+
 3. Explain how simulations like Conway's Game of Life can be used in real-world applications.
+
+Cellular automata can be used to model several physical and chemical reactions found in our world where some kind of 'nodes' has a predictable response based on state of it's neighbors. Some examples of this used in science is simulating the mechanism that plants use to regulate the lose and gain of gases and also simulating and exploring possible genetic combinations in DNA.
