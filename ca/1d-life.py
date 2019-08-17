@@ -5,6 +5,12 @@ def get_new_value(old_gen, old_automata):
     current_row = old_automata[SQ_NUM*old_gen: SQ_NUM*(old_gen + 1)]
     for i in range(len(current_row)):
         print(i)
+        row = ((SQ_NUM*old_gen) + i) =49
+        if row < len(automata):
+            if current_row[i] == 1:
+                #TODO LOGIC
+            else:
+                #TODO LOGIC
     # TBC - add code to generate the next row of cells,
     # then replace the return statement below to
     # return the updated automata
