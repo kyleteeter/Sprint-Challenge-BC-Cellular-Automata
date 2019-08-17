@@ -24,7 +24,12 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
-    while valid_proof(last_hash , proof) is False:
+    Partial_proof = random.randint(100000, 999999)
+    front_proof = random.randint(1000000000000,9999999999999)
+    fullProof = str(front_proof) + str(Partial_proof)
+    proof = int(fullProof)
+
+    while valid_proof(last_proof , proof) is False:
         proof +=1
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
@@ -39,17 +44,7 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    #build string to hash
-    guess = f'{last_hash}{proof}'.encode()
-    # use hash function
-    guess_hash = hashlib.sha256(guess).hexdigest()
-    #Check if 6 leading 0's
-    beg = guess_hash[0:4] #[:6]
-    if beg == "0000":
-        return True
-    else:
-        return False
-    pass
+    print(last_hash)
 
 
 if __name__ == '__main__':
