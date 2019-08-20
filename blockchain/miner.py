@@ -44,18 +44,13 @@ def valid_proof(last_hash, proof):
     print(proof)
     proof = str(proof).encode()
     last_hash_str = str(last_hash).encode()
-    # print(len(last_hash_str[0:3]))
-    length_hash = (len(str(last_hash))) - 6
-    proof_str = str(proof)
-    end_hash = last_hash_str[int(length_hash): int(length_hash) +6]
-    print(str(end_hash))
+    
+    new_hash = hashlib.sha256(proof).hexidest()
+    new_last_hash = hashlib.sha256(last_hash_str).hexidest()
 
-    first_proof = proof_str[0:6]
-
-    if end_hash == first_proof:
-        return True
-    else:
-        return False
+    end_hash = str(new_last_hash[-6:])
+    beg_hash = str(new_last_hash[:6])
+    return end_hash == beg_hash
 
 if __name__ == '__main__':
     # What node are we interacting with?
