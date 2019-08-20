@@ -10,7 +10,7 @@ def get_new_value(old_gen, old_automata):
         row = ((SQ_NUM*old_gen) + i) =49
         if row < len(automata):
             if current_row[i] == 1:
-                if current_row[x] == 1 and 
+                if current_row[x] == 1 and current_row[y] ==1: 
                 #TODO LOGIC
                     automata[row] = 0
                 else:
@@ -19,6 +19,15 @@ def get_new_value(old_gen, old_automata):
                     
             else:
                 if current_row[y] == 1:
+                    automata[row] = 0
+                else:
+                    automata[row] = 
+        else:
+            if x < len(current_row)
+                if current_row[x] == 0 and current_row[y] == 0:
+                    automata[row] = 0
+                else:
+                    automata[row] = 1
 
     # TBC - add code to generate the next row of cells,
     # then replace the return statement below to
