@@ -6,37 +6,38 @@ def get_new_value(old_gen, old_automata):
     current_row = old_automata[SQ_NUM*old_gen: SQ_NUM*(old_gen + 1)]
     for i in range(len(current_row)):
         print(i)
-        x = i + 1
-        y = i - 1
-        row = ((SQ_NUM*old_gen) + i) + 49
-        if row < len(automata):
+        east = i + 1
+        west = i - 1
+        south = ((SQ_NUM*old_gen) + i) + 49
+        if south < len(automata):
             if current_row[i] == 1:
-                if current_row[x] == 1 and current_row[y] ==1: 
+                if east < len(current_row):
+                    if current_row[east] == 1 and current_row[west] == 1: 
                 #TODO LOGIC
-                    automata[row] = 0
-                else:
+                        automata[south] = 0
+                    else:
                 #TODO LOGIC
-                    automata[row] = 1
+                        automata[south] = 1
                     
+                else:
+                    if current_row[west] == 1:
+                        automata[south] = 0
+                    else:
+                        automata[south] = 1
             else:
-                if current_row[y] == 1:
-                    automata[row] = 0
+                if east < len(current_row):
+                    if current_row[east] == 0 and current_row[west] == 0:
+                        automata[south] = 0
+                    else:
+                        automata[south] = 1
                 else:
-                    automata[row] = 1
-        else:
-            if x < len(current_row):
-                if current_row[x] == 0 and current_row[y] == 0:
-                    automata[row] = 0
-                else:
-                    automata[row] = 1
-            else:
-                if current_row[y] == 0:
-                    automata[row] = 0
-                else:
-                    automata[row] = 1
-        if i == 0 or i == (len(current_row)-1):
-            if current_row[i] == 1:
-                automata[row] = 1
+                    if current_row[west] == 0:
+                        automata[south] = 0
+                    else:
+                        automata[south] = 1
+            if i == 0 or i == (len(current_row)-1):
+                if current_row[i] == 1:
+                    automata[south] = 1
     
 
     # TBC - add code to generate the next row of cells,
