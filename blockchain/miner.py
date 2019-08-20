@@ -42,7 +42,8 @@ def valid_proof(last_hash, proof):
     # TODO: Your code here!
     print(last_hash)
     print(proof)
-    last_hash_str = str(last_hash)
+    proof = str(proof).encode()
+    last_hash_str = str(last_hash).encode()
     # print(len(last_hash_str[0:3]))
     length_hash = (len(str(last_hash))) - 6
     proof_str = str(proof)
