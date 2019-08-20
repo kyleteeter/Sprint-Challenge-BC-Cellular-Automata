@@ -24,10 +24,6 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
-    Partial_proof = random.randint(100000, 999999)
-    front_proof = random.randint(1000000000000,9999999999999)
-    fullProof = str(front_proof) + str(Partial_proof)
-    proof = int(fullProof)
 
     while valid_proof(last_proof , proof) is False:
         proof +=1
