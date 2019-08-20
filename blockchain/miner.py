@@ -45,11 +45,11 @@ def valid_proof(last_hash, proof):
     proof = str(proof).encode()
     last_hash_str = str(last_hash).encode()
     
-    new_hash = hashlib.sha256(proof).hexidest()
-    new_last_hash = hashlib.sha256(last_hash_str).hexidest()
+    new_hash = hashlib.sha256(proof).hexdigest()
+    new_last_hash = hashlib.sha256(last_hash_str).hexdigest()
 
     end_hash = str(new_last_hash[-6:])
-    beg_hash = str(new_last_hash[:6])
+    beg_hash = str(new_hash[:6])
     return end_hash == beg_hash
 
 if __name__ == '__main__':
