@@ -1,10 +1,49 @@
 import pygame, random
 
 def get_new_value(old_gen, old_automata):
+    oa = old_automata
+    automata = old_automata
+    current_row = old_automata[SQ_NUM*old_gen: SQ_NUM*(old_gen + 1)]
+    for i in range(len(current_row)):
+        print(i)
+        east = i + 1
+        west = i - 1
+        south = ((SQ_NUM*old_gen) + i) + 49
+        if south < len(automata):
+            if current_row[i] == 1:
+                if east < len(current_row):
+                    if current_row[east] == 1 and current_row[west] == 1: 
+                #TODO LOGIC
+                        automata[south] = 0
+                    else:
+                #TODO LOGIC
+                        automata[south] = 1
+                    
+                else:
+                    if current_row[west] == 1:
+                        automata[south] = 0
+                    else:
+                        automata[south] = 1
+            else:
+                if east < len(current_row):
+                    if current_row[east] == 0 and current_row[west] == 0:
+                        automata[south] = 0
+                    else:
+                        automata[south] = 1
+                else:
+                    if current_row[west] == 0:
+                        automata[south] = 0
+                    else:
+                        automata[south] = 1
+            if i == 0 or i == (len(current_row)-1):
+                if current_row[i] == 1:
+                    automata[south] = 1
+    
+
     # TBC - add code to generate the next row of cells,
     # then replace the return statement below to
     # return the updated automata
-    return old_automata
+    return automata
 
 # Define some colors and other constants
 BLACK = (0, 0, 0)
